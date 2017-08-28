@@ -1,4 +1,4 @@
-
+#!/usr/bin/python
 # coding: utf-8
 
 # ## Creating Custom Datasets and Finetuning Pre-trained Networks
@@ -27,7 +27,7 @@ import PIL.Image
 import torch.nn as nn
 from torch.autograd import Variable
 
-get_ipython().magic(u'matplotlib inline')
+#get_ipython().magic(u'matplotlib inline')
 import matplotlib.pyplot as plt
 
 
@@ -119,12 +119,12 @@ def imshow(img):
 train_dataiter = iter(train_loader)
 train_images, train_labels = train_dataiter.next()
 print("Train images")
-imshow(torchvision.utils.make_grid(train_images))
+#imshow(torchvision.utils.make_grid(train_images))
 
 test_dataiter = iter(test_loader)
 test_images, test_labels = test_dataiter.next()
 print("Test images")
-imshow(torchvision.utils.make_grid(test_images))
+#imshow(torchvision.utils.make_grid(test_images))
 
 
 # ### VGG-16 and Resnet-18
@@ -246,7 +246,7 @@ def test(model):
         _, predicted = torch.max(outputs.data, 1)
         total += labels.size(0)
         correct += (predicted.cpu() == labels.cpu()).sum()
-    print('Accuracy of the network on the ' + total +' test images: %d %%' % (100 * correct / total))
+    print('Accuracy of the network on the ' + str(total) +' test images: %d %%' % (100 * correct / total))
 
 
 # Test the models
